@@ -23,33 +23,21 @@ namespace PryFakiani_IEFI
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            lblIngreso.Text = "Ingreso: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
 
         }
 
-
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void aUDITORIAToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
+            FrmAuditoria auditoria = new FrmAuditoria();
+            auditoria.ShowDialog();
         }
 
         private void aUDITORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            FrmAuditoria auditoria = new FrmAuditoria();
-            auditoria.ShowDialog();
-
-
+            FrmUsuarios usuarios = new FrmUsuarios();
+            usuarios.ShowDialog(); // o usuarios.Show(); si querés que no sea modal
         }
-
-
-
-
     }
 }

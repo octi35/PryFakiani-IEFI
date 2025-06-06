@@ -40,21 +40,21 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(53, 103);
+            this.txtUsuario.Location = new System.Drawing.Point(248, 115);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(225, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(53, 157);
+            this.txtClave.Location = new System.Drawing.Point(248, 203);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(219, 20);
             this.txtClave.TabIndex = 1;
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(41, 203);
+            this.btnIniciar.Location = new System.Drawing.Point(280, 250);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(154, 42);
             this.btnIniciar.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(40, 262);
+            this.btnRegistrarse.Location = new System.Drawing.Point(279, 361);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(155, 38);
             this.btnRegistrarse.TabIndex = 3;
@@ -75,16 +75,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 50);
+            this.label1.Location = new System.Drawing.Point(332, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "INICIAR SESION";
+            this.label1.Text = "NEGOCIO";
             // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(50, 139);
+            this.lblClave.Location = new System.Drawing.Point(318, 167);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(88, 15);
             this.lblClave.TabIndex = 5;
@@ -93,7 +93,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(55, 84);
+            this.lblUsuario.Location = new System.Drawing.Point(333, 84);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(61, 15);
             this.lblUsuario.TabIndex = 6;
@@ -102,7 +102,7 @@
             // lblConexion
             // 
             this.lblConexion.AutoSize = true;
-            this.lblConexion.Location = new System.Drawing.Point(12, 422);
+            this.lblConexion.Location = new System.Drawing.Point(277, 331);
             this.lblConexion.Name = "lblConexion";
             this.lblConexion.Size = new System.Drawing.Size(41, 15);
             this.lblConexion.TabIndex = 7;
@@ -112,6 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblConexion);
             this.Controls.Add(this.lblUsuario);

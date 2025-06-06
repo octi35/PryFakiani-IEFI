@@ -13,7 +13,7 @@ namespace PryFakiani_IEFI
     public partial class Form1 : Form
     {
 
-        clsUsuario objUsuario;
+        clsUsuariosDatos objUsuario;
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace PryFakiani_IEFI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            objUsuario = new clsUsuario();
+            objUsuario = new clsUsuariosDatos();
             lblConexion.Text = objUsuario.estadoConexion;
 
 
@@ -38,14 +38,15 @@ namespace PryFakiani_IEFI
             string apellido = "Usuario"; // o pedírselo luego
             string descripcion = "Registrado desde el sistema";
 
-            clsUsuario objUsuario = new clsUsuario();
-            if (objUsuario.RegistrarUsuario(login, nombre, apellido, descripcion, clave))
+            clsUsuariosDatos objUsuario = new clsUsuariosDatos();
+            string estado;
+            if (objUsuario.RegistrarUsuario(login, nombre, apellido, descripcion, clave, out estado))
             {
                 MessageBox.Show("Usuario registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error al registrar: " + objUsuario.estadoConexion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al registrar: " + estado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -60,7 +61,7 @@ namespace PryFakiani_IEFI
                 return;
             }
 
-            clsUsuario usuario = new clsUsuario();
+            clsUsuariosDatos usuario = new clsUsuariosDatos();
             bool loginExitoso = usuario.ValidarLogin(login, password);
 
             if (loginExitoso)

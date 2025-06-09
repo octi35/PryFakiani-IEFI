@@ -22,34 +22,10 @@ namespace PryFakiani_IEFI
         private void Form1_Load(object sender, EventArgs e)
         {
             objUsuario = new clsUsuariosDatos();
-            lblConexion.Text = objUsuario.estadoConexion;
+          
 
 
         }
-
-     
-
-        private void btnRegistrarse_Click(object sender, EventArgs e)
-        {
-            string login = txtUsuario.Text.Trim();
-            string clave = txtClave.Text.Trim();
-
-            string nombre = "Nuevo";     // Podés agregar TextBox para esto
-            string apellido = "Usuario"; // o pedírselo luego
-            string descripcion = "Registrado desde el sistema";
-
-            clsUsuariosDatos objUsuario = new clsUsuariosDatos();
-            string estado;
-            if (objUsuario.RegistrarUsuario(login, nombre, apellido, descripcion, clave, out estado))
-            {
-                MessageBox.Show("Usuario registrado correctamente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Error al registrar: " + estado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnIniciar_Click_1(object sender, EventArgs e)
         {
             string login = txtUsuario.Text.Trim();

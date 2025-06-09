@@ -51,42 +51,42 @@
     <Compile Include="MODELOS\ClsConexion.cs" />
     <Compile Include="DATOSCS\clsUsuariosDatos.cs" />
     <Compile Include="MODELOS\ClsUsuarios.cs" />
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="FORMS\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="FORMS\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAuditoria.cs">
+    <Compile Include="FORMS\FrmAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAuditoria.Designer.cs">
+    <Compile Include="FORMS\FrmAuditoria.Designer.cs">
       <DependentUpon>FrmAuditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrincipal.cs">
+    <Compile Include="FORMS\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrincipal.Designer.cs">
+    <Compile Include="FORMS\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuarios.cs">
+    <Compile Include="FORMS\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUsuarios.Designer.cs">
+    <Compile Include="FORMS\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="FORMS\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAuditoria.resx">
+    <EmbeddedResource Include="FORMS\FrmAuditoria.resx">
       <DependentUpon>FrmAuditoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipal.resx">
+    <EmbeddedResource Include="FORMS\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuarios.resx">
+    <EmbeddedResource Include="FORMS\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

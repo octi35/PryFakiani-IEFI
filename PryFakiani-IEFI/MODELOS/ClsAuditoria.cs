@@ -9,9 +9,9 @@ namespace PryFakiani_IEFI
     public class ClsAuditoria
     {
         public int IdAuditoria { get; set; }
-        public int IdUsuario { get; set; }
+        public int IdUsuarios { get; set; }
         public string NombreUsuario { get; set; }
         public DateTime Fecha { get; set; }
-        public int TiempoUso { get; set; }
+        public int TiempoDeUso { get; set; }
     }
 }

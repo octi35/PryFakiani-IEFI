@@ -1,33 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PryFakiani_IEFI
 {
-    internal class clsAuditoriaDatos
+    public class ClsAuditoriaDatos
     {
-        private readonly clsConexion conexion = new clsConexion();
+        private readonly string cadenaConexion = "server=OCTI\\SQLEXPRESS; database=Negocio; integrated security=true";
 
-        public void RegistroLogInicioSesion(string login)
+        public DataTable ObtenerAuditoriasConUsuarios()
         {
-            try
+            DataTable tabla = new DataTable();
+            string consulta = @"
+            SELECT 
+                A.IdAuditoria, 
+                A.IdUsuarios,
+                U.Nombre + ' ' + U.Apellido AS NombreUsuario,
+                A.Fecha, 
+                A.TiempoDeUso
+            FROM Auditoria A
+            INNER JOIN Usuarios U ON A.IdUsuarios = U.IdUsuarios
+            ORDER BY A.IdAuditoria";
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                using (SqlConnection conn = conexion.ObtenerConexion())
+                try
                 {
-                    conn.Open();
-                    string sql = "INSERT INTO Auditoria (Login, FechaHoraInicio) VALUES (@login, GETDATE())";
-                    SqlCommand comando = new SqlCommand(sql, conn);
-                    comando.Parameters.AddWithValue("@login", login);
-                    comando.ExecuteNonQuery();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    adaptador.Fill(tabla);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al obtener auditorías: " + ex.Message);
                 }
             }
-            catch
-            {
-                // Manejo de errores silencioso por ahora
-            }
+
+            return tabla;
         }
     }
+
 }

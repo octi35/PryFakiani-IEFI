@@ -48,7 +48,7 @@
             this.aDMINISTRACIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,14 +70,14 @@
             // aUDITORIAToolStripMenuItem
             // 
             this.aUDITORIAToolStripMenuItem.Name = "aUDITORIAToolStripMenuItem";
-            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.aUDITORIAToolStripMenuItem.Text = "USUARIOS";
             this.aUDITORIAToolStripMenuItem.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem_Click);
             // 
             // aUDITORIAToolStripMenuItem1
             // 
             this.aUDITORIAToolStripMenuItem1.Name = "aUDITORIAToolStripMenuItem1";
-            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(168, 26);
             this.aUDITORIAToolStripMenuItem1.Text = "AUDITORIA";
             this.aUDITORIAToolStripMenuItem1.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem1_Click);
             // 

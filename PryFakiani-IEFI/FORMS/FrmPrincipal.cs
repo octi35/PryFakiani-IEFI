@@ -18,19 +18,17 @@ namespace PryFakiani_IEFI
         {
             InitializeComponent();
             usuarioActual = usuario;
-            lblBienvenida.Text = "Bienvenido, " + usuario;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblIngreso.Text = "Ingreso: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-
-
+            lblBienvenida.Text = "Bienvenido," + usuarioActual;
         }
 
         private void aUDITORIAToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmAuditoria auditoria = new FrmAuditoria();
+            FrmAuditoria auditoria = new FrmAuditoria(usuarioActual);
             auditoria.ShowDialog();
         }
 
@@ -39,5 +37,6 @@ namespace PryFakiani_IEFI
             FrmUsuarios usuarios = new FrmUsuarios();
             usuarios.ShowDialog(); // o usuarios.Show(); si querés que no sea modal
         }
+
     }
 }

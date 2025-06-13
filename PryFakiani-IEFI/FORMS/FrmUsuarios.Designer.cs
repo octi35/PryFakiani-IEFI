@@ -263,9 +263,9 @@
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(805, 0);
+            this.panel1.Location = new System.Drawing.Point(784, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 690);
+            this.panel1.Size = new System.Drawing.Size(227, 680);
             this.panel1.TabIndex = 23;
             // 
             // btnBuscar
@@ -286,7 +286,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 94);
+            this.panel2.Size = new System.Drawing.Size(784, 94);
             this.panel2.TabIndex = 24;
             // 
             // dataNacimiento
@@ -314,9 +314,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 664);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 654);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(805, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(784, 26);
             this.statusStrip1.TabIndex = 27;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -337,7 +337,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1032, 690);
+            this.ClientSize = new System.Drawing.Size(1011, 680);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataUsuarios);
             this.Controls.Add(this.dataNacimiento);

@@ -45,8 +45,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblTiempodeUso = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTiempouso = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblUsuarioAuditoria = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -218,6 +218,12 @@
             this.lblTiempouso.Name = "lblTiempouso";
             this.lblTiempouso.Size = new System.Drawing.Size(0, 20);
             // 
+            // lblUsuarioAuditoria
+            // 
+            this.lblUsuarioAuditoria.Name = "lblUsuarioAuditoria";
+            this.lblUsuarioAuditoria.Size = new System.Drawing.Size(151, 20);
+            this.lblUsuarioAuditoria.Text = "toolStripStatusLabel1";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(582, 485);
@@ -227,16 +233,11 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lblUsuarioAuditoria
-            // 
-            this.lblUsuarioAuditoria.Name = "lblUsuarioAuditoria";
-            this.lblUsuarioAuditoria.Size = new System.Drawing.Size(151, 20);
-            this.lblUsuarioAuditoria.Text = "toolStripStatusLabel1";
-            // 
             // FrmAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1062, 589);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);

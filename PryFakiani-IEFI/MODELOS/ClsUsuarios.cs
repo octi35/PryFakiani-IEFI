@@ -20,5 +20,10 @@ namespace PryFakiani_IEFI
         public string Celular { get; set; }
         public int Nivel {  get; set; }
 
+        public ClsUsuarios()
+        {
+            FechaRegistro = DateTime.Now;
+        }
+
     }
 }

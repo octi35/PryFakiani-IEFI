@@ -42,20 +42,21 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tAREASToolStripMenuItem,
             this.aDMINISTRACIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tAREASToolStripMenuItem
             // 
             this.tAREASToolStripMenuItem.Name = "tAREASToolStripMenuItem";
-            this.tAREASToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.tAREASToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.tAREASToolStripMenuItem.Text = "TAREAS";
             // 
             // aDMINISTRACIONToolStripMenuItem
@@ -64,25 +65,26 @@
             this.aUDITORIAToolStripMenuItem,
             this.aUDITORIAToolStripMenuItem1});
             this.aDMINISTRACIONToolStripMenuItem.Name = "aDMINISTRACIONToolStripMenuItem";
-            this.aDMINISTRACIONToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.aDMINISTRACIONToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.aDMINISTRACIONToolStripMenuItem.Text = "ADMINISTRACION";
             // 
             // aUDITORIAToolStripMenuItem
             // 
             this.aUDITORIAToolStripMenuItem.Name = "aUDITORIAToolStripMenuItem";
-            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aUDITORIAToolStripMenuItem.Text = "USUARIOS";
             this.aUDITORIAToolStripMenuItem.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem_Click);
             // 
             // aUDITORIAToolStripMenuItem1
             // 
             this.aUDITORIAToolStripMenuItem1.Name = "aUDITORIAToolStripMenuItem1";
-            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(168, 26);
+            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.aUDITORIAToolStripMenuItem1.Text = "AUDITORIA";
             this.aUDITORIAToolStripMenuItem1.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem1_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblBienvenida,
@@ -109,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

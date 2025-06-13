@@ -21,90 +21,198 @@ namespace PryFakiani_IEFI
             InitializeComponent();
         }
 
+        clsUsuariosDatos usuariosDatos = new clsUsuariosDatos();
+        ClsUsuarios usuarioSeleccionado = null;
+
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
-
+            CargarUsuarios();
+        }
+        private void CargarUsuarios()
+        {
+            dataUsuarios.DataSource = usuariosDatos.ObtenerUsuarios();
         }
 
         private void LimpiarCampos()
         {
-            txtDNI.Clear();
+            txtLogin.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
-            cmbArea.SelectedIndex = -1;
-            txtNacimiento.Clear();
-            txtCelular.Clear();
-            txtLogin.Clear();
+           
             txtContraseña.Clear();
+            txtCelular.Clear();
+            cmbArea.SelectedIndex = -1;
+            dataNacimiento.Value = DateTime.Now;
+            
+
+            usuarioSeleccionado = null;
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection conexion = conexionBD.ObtenerConexion())
-            {
-                try
-                {
-                    conexion.Open();
-                    string query = "INSERT INTO Usuarios (DNI, Nombre, Apellido, Area, FechaNacimiento, Celular, Login, Contraseña) " +
-                                   "VALUES (@DNI, @Nombre, @Apellido, @Area, @FechaNacimiento, @Celular, @Login, @Contraseña)";
-                    using (SqlCommand cmd = new SqlCommand(query, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@DNI", txtDNI.Text);
-                        cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                        cmd.Parameters.AddWithValue("@Apellido", txtApellido.Text);
-                        cmd.Parameters.AddWithValue("@Area", cmbArea.Text);
-                        cmd.Parameters.AddWithValue("@FechaNacimiento", DateTime.Parse(txtNacimiento.Text));
-                        cmd.Parameters.AddWithValue("@Celular", txtCelular.Text);
-                        cmd.Parameters.AddWithValue("@Login", txtLogin.Text);
-                        cmd.Parameters.AddWithValue("@Contraseña", txtContraseña.Text);
 
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Usuario registrado exitosamente.");
-                        LimpiarCampos();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar: " + ex.Message);
-                }
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCelular_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+            ClsUsuarios nuevo = new ClsUsuarios
+            {
+                Login = txtLogin.Text,
+                Nombre = txtNombre.Text,
+                Apellido = txtApellido.Text,
+                FechaRegistro = DateTime.Now,
+                Descripcion = "Registrado desde el sistema",
+                area = cmbArea.Text,
+                Contraseña = txtContraseña.Text,
+                FechaNacimiento = dataNacimiento.Value,
+                Celular = txtCelular.Text,
+               
+
+            };
+            
+
+            if (usuariosDatos.AgregarUsuario(nuevo))
+            {
+                MessageBox.Show("Usuario agregado correctamente");
+                CargarUsuarios();
+                LimpiarCampos();
+
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el usuario");
             }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conexion = conexionBD.ObtenerConexion())
+            if (usuarioSeleccionado == null)
             {
-                try
-                {
-                    conexion.Open();
-                    string query = "UPDATE Usuarios SET Nombre=@Nombre, Apellido=@Apellido, Area=@Area, FechaNacimiento=@FechaNacimiento, " +
-                                   "Celular=@Celular, Login=@Login, Contraseña=@Contraseña WHERE DNI=@DNI";
-                    using (SqlCommand cmd = new SqlCommand(query, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                        cmd.Parameters.AddWithValue("@Apellido", txtApellido.Text);
-                        cmd.Parameters.AddWithValue("@Area", cmbArea.Text);
-                        cmd.Parameters.AddWithValue("@FechaNacimiento", DateTime.Parse(txtNacimiento.Text));
-                        cmd.Parameters.AddWithValue("@Celular", txtCelular.Text);
-                        cmd.Parameters.AddWithValue("@Login", txtLogin.Text);
-                        cmd.Parameters.AddWithValue("@Contraseña", txtContraseña.Text);
-                        cmd.Parameters.AddWithValue("@DNI", txtDNI.Text);
+                MessageBox.Show("Seleccione un usuario para actualizar.");
+                return;
+            }
 
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Usuario actualizado.");
-                        LimpiarCampos();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al actualizar: " + ex.Message);
-                }
+            usuarioSeleccionado.Login = txtLogin.Text;
+            usuarioSeleccionado.Nombre = txtNombre.Text;
+            usuarioSeleccionado.Apellido = txtApellido.Text;
+            usuarioSeleccionado.area = cmbArea.Text;
+            usuarioSeleccionado.Contraseña = txtContraseña.Text;
+            usuarioSeleccionado.FechaNacimiento = dataNacimiento.Value;
+            usuarioSeleccionado.Celular = txtCelular.Text;
+           
+
+            if (usuariosDatos.ActualizarUsuario(usuarioSeleccionado))
+            {
+                MessageBox.Show("Usuario actualizado correctamente.");
+                CargarUsuarios();
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar el usuario.");
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            if (usuarioSeleccionado == null)
+            {
+                MessageBox.Show("Seleccione un usuario para eliminar.");
+                return;
+            }
+
+            if (usuariosDatos.EliminarUsuario(usuarioSeleccionado.IdUsuarios))
+            {
+                MessageBox.Show("Usuario eliminado correctamente.");
+                CargarUsuarios();
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar el usuario.");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string login = txtLogin.Text;
+            dataUsuarios.DataSource = usuariosDatos.BuscarUsuarioPorLogin(login);
+        }
+
+        private void dataUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dataUsuarios.Rows[e.RowIndex];
+
+                usuarioSeleccionado = new ClsUsuarios
+                {
+                    IdUsuarios = Convert.ToInt32(fila.Cells["IdUsuarios"].Value),
+                    Login = fila.Cells["Login"].Value.ToString(),
+                    Nombre = fila.Cells["Nombre"].Value.ToString(),
+                    Apellido = fila.Cells["Apellido"].Value.ToString(),
+                    Descripcion = fila.Cells["Descripcion"].Value.ToString(),
+                    FechaRegistro = Convert.ToDateTime(fila.Cells["FechaRegistro"].Value),
+                    area = fila.Cells["Area"].Value.ToString(),
+                    Contraseña = fila.Cells["Contraseña"].Value.ToString(),
+                    FechaNacimiento = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value),
+                    Celular = fila.Cells["Celular"].Value.ToString(),
+                    Nivel = Convert.ToInt32(fila.Cells["Nivel"].Value)
+                };
+
+                // Cargar los datos en los campos
+                txtLogin.Text = usuarioSeleccionado.Login;
+                txtNombre.Text = usuarioSeleccionado.Nombre;
+                txtApellido.Text = usuarioSeleccionado.Apellido;
+              
+                cmbArea.Text = usuarioSeleccionado.area;
+                txtContraseña.Text = usuarioSeleccionado.Contraseña;
+                dataNacimiento.Value = usuarioSeleccionado.FechaNacimiento;
+                txtCelular.Text = usuarioSeleccionado.Celular;
+               
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

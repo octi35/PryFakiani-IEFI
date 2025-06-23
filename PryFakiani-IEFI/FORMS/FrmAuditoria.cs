@@ -62,12 +62,6 @@ namespace PryFakiani_IEFI
             if (chkfiltrarAuditoriaId.Checked && !string.IsNullOrWhiteSpace(txtAuditoriaId.Text))
                 filtro += $"Convert(IdAuditoria, 'System.String') LIKE '%{txtAuditoriaId.Text.Trim()}%'";
 
-            if (chkiUsuarioId.Checked && !string.IsNullOrWhiteSpace(txtUsuarioId.Text))
-            {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
-                filtro += $"Convert(IdUsuarios, 'System.String') LIKE '%{txtUsuarioId.Text.Trim()}%'";
-            }
-
             if (chkUsuarioNombre.Checked && !string.IsNullOrWhiteSpace(txtUsuarioNombre.Text))
             {
                 if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
@@ -158,6 +152,21 @@ namespace PryFakiani_IEFI
         private void RadioDesc_CheckedChanged(object sender, EventArgs e)
         {
             AplicarFiltros();
+        }
+
+        private void dateDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

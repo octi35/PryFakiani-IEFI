@@ -123,5 +123,62 @@ namespace PryFakiani_IEFI
                 return count > 0;
             }
         }
+
+        public int ObtenerNivelUsuario(string login, string password)
+        {
+            using (SqlConnection conexion = conexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+                string query = "SELECT Nivel FROM Usuarios WHERE Login = @login AND Contraseña = @password";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@login", login);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                object resultado = cmd.ExecuteScalar();
+                return resultado != null && resultado != DBNull.Value ? Convert.ToInt32(resultado) : -1;
+            }
+        }
+
+
+
+        //metodo tiempo 
+        public ClsUsuarios ObtenerUsuarioPorLogin(string login)
+        {
+            using (SqlConnection conexion = conexionBD.ObtenerConexion())
+            {
+                string query = "SELECT * FROM Usuarios WHERE Login = @login";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@login", login);
+
+                conexion.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    return new ClsUsuarios
+                    {
+                        IdUsuarios = Convert.ToInt32(reader["IdUsuarios"]),
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        Login = reader["Login"].ToString(),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]),
+                        area = reader["Area"] != DBNull.Value ? reader["Area"].ToString() : "Sin Área",
+                        Contraseña = reader["Contraseña"].ToString(),
+                        FechaNacimiento = reader["FechaNacimiento"] != DBNull.Value
+                            ? Convert.ToDateTime(reader["FechaNacimiento"])
+                            : DateTime.MinValue,
+                        Celular = reader["Celular"] != DBNull.Value ? reader["Celular"].ToString() : "Sin celular",
+                        Nivel = reader["Nivel"] != DBNull.Value ? Convert.ToInt32(reader["Nivel"]) : 0
+                    };
+                }
+                return null;
+            }
+        }
+
+
+
+
     }
+
+
 }

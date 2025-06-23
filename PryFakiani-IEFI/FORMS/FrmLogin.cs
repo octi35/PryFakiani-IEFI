@@ -22,7 +22,7 @@ namespace PryFakiani_IEFI
         private void Form1_Load(object sender, EventArgs e)
         {
             objUsuario = new clsUsuariosDatos();
-          
+
 
 
         }
@@ -37,21 +37,21 @@ namespace PryFakiani_IEFI
                 return;
             }
 
-            clsUsuariosDatos usuario = new clsUsuariosDatos();
-            bool loginExitoso = usuario.ValidarLogin(login, password);
+            clsUsuariosDatos usuarioDatos = new clsUsuariosDatos();
+            bool loginExitoso = usuarioDatos.ValidarLogin(login, password);
 
             if (loginExitoso)
             {
                 MessageBox.Show("Inicio de sesión exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Ocultar el login
                 this.Hide();
 
-                // Mostrar el formulario principal y pasarle el login del usuario
-                FrmPrincipal principal = new FrmPrincipal(login);
+                // Obtener el objeto completo del usuario
+                ClsUsuarios datosUsuario = usuarioDatos.ObtenerUsuarioPorLogin(login);
+
+                // Pasar el objeto completo a FrmPrincipal
+                FrmPrincipal principal = new FrmPrincipal(datosUsuario);
                 principal.ShowDialog();
 
-                // Cerrar completamente la app si se cierra FrmPrincipal
                 this.Close();
             }
             else

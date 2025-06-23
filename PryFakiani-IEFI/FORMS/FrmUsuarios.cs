@@ -103,7 +103,9 @@ namespace PryFakiani_IEFI
                 Contraseña = txtContraseña.Text,
                 FechaNacimiento = dataNacimiento.Value,
                 Celular = txtCelular.Text,
-               
+                Nivel = 0
+
+
 
             };
             
@@ -211,6 +213,16 @@ namespace PryFakiani_IEFI
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
 
         }

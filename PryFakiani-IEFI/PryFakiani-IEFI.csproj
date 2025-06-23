@@ -97,6 +97,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +111,52 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MODELOS\scriptbase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siluetalogin.png" />
+    <None Include="Resources\imagenlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginblanco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginimagen3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candadologin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono buscar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modificar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664843_pen_to_square_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664789_circle_check_mark_accept_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664843_pen_to_square_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664831_user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664938_trash_can_delete_remove_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664915_rectangle_list_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

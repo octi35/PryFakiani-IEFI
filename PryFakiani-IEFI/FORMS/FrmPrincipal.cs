@@ -30,8 +30,6 @@ namespace PryFakiani_IEFI
         public FrmPrincipal(ClsUsuarios usuarioRecibido)
         {
             InitializeComponent();
-            // usuarioActual = usuario;
-            // nivelUsuario = nivel;
             usuario = usuarioRecibido;
             this.FormClosing += FrmPrincipal_FormClosing;
         }
@@ -59,8 +57,10 @@ namespace PryFakiani_IEFI
 
         private void aUDITORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmUsuarios usuarios = new FrmUsuarios();
-            usuarios.ShowDialog(); // o usuarios.Show(); si querés que no sea modal
+            FrmUsuarios usuarios = new FrmUsuarios(usuario); // ✔️ Pasás el usuario logueado
+            usuarios.ShowDialog();
+
+            
         }
 
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)

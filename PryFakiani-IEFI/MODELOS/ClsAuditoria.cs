@@ -13,5 +13,6 @@ namespace PryFakiani_IEFI
         public string NombreUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public int TiempoDeUso { get; set; }
+
     }
 }

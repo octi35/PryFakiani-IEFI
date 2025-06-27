@@ -13,9 +13,9 @@ namespace PryFakiani_IEFI
             using (SqlConnection conexion = conexionBD.ObtenerConexion())
             {
                 string query = @"INSERT INTO Usuarios 
-                                (Login, Nombre, Apellido, Descripcion, FechaRegistro, Area, Contraseña, FechaNacimiento, Celular, Nivel)
+                                (Login, Nombre, Apellido, Descripcion, FechaRegistro, Area, Contraseña, FechaNacimiento, Celular, Nivel, DNI)
                                  VALUES 
-                                (@Login, @Nombre, @Apellido, @Descripcion, @FechaRegistro, @Area, @Contraseña, @FechaNacimiento, @Celular, @Nivel)";
+                                (@Login, @Nombre, @Apellido, @Descripcion, @FechaRegistro, @Area, @Contraseña, @FechaNacimiento, @Celular, @Nivel,@DNI )";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
@@ -29,6 +29,7 @@ namespace PryFakiani_IEFI
                 cmd.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
                 cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
                 cmd.Parameters.AddWithValue("@Nivel", usuario.Nivel);
+                cmd.Parameters.AddWithValue("@DNI", usuario.DNI);
 
                 conexion.Open();
                 return cmd.ExecuteNonQuery() > 0;
@@ -74,7 +75,8 @@ namespace PryFakiani_IEFI
                                  Contraseña = @Contraseña,
                                  FechaNacimiento = @FechaNacimiento,
                                  Celular = @Celular,
-                                 Nivel = @Nivel
+                                 Nivel = @Nivel,
+                                 DNI = @DNI
                                  WHERE IdUsuarios = @IdUsuarios";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -89,6 +91,7 @@ namespace PryFakiani_IEFI
                 cmd.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
                 cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
                 cmd.Parameters.AddWithValue("@Nivel", usuario.Nivel);
+                cmd.Parameters.AddWithValue("@DNI", usuario.DNI);
                 cmd.Parameters.AddWithValue("@IdUsuarios", usuario.IdUsuarios);
 
                 conexion.Open();
@@ -100,12 +103,19 @@ namespace PryFakiani_IEFI
         {
             using (SqlConnection conexion = conexionBD.ObtenerConexion())
             {
-                string query = "DELETE FROM Usuarios WHERE IdUsuarios = @IdUsuarios";
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@IdUsuarios", idUsuario);
-
                 conexion.Open();
-                return cmd.ExecuteNonQuery() > 0;
+
+                // Primero borra las auditorías relacionadas
+                string queryAuditoria = "DELETE FROM Auditoria WHERE IdUsuarios = @IdUsuarios";
+                SqlCommand cmdAuditoria = new SqlCommand(queryAuditoria, conexion);
+                cmdAuditoria.Parameters.AddWithValue("@IdUsuarios", idUsuario);
+                cmdAuditoria.ExecuteNonQuery();
+
+                // Ahora sí puede borrar el usuario
+                string queryUsuario = "DELETE FROM Usuarios WHERE IdUsuarios = @IdUsuarios";
+                SqlCommand cmdUsuario = new SqlCommand(queryUsuario, conexion);
+                cmdUsuario.Parameters.AddWithValue("@IdUsuarios", idUsuario);
+                return cmdUsuario.ExecuteNonQuery() > 0;
             }
         }
 
@@ -168,7 +178,8 @@ namespace PryFakiani_IEFI
                             ? Convert.ToDateTime(reader["FechaNacimiento"])
                             : DateTime.MinValue,
                         Celular = reader["Celular"] != DBNull.Value ? reader["Celular"].ToString() : "Sin celular",
-                        Nivel = reader["Nivel"] != DBNull.Value ? Convert.ToInt32(reader["Nivel"]) : 0
+                        Nivel = reader["Nivel"] != DBNull.Value ? Convert.ToInt32(reader["Nivel"]) : 0,
+                        DNI = reader["DNI"] != DBNull.Value ? reader["DNI"].ToString() : "Sin DNI"
                     };
                 }
                 return null;

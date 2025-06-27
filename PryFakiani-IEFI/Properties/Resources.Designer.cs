@@ -63,9 +63,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664789_circle_check_mark_accept_icon {
+        internal static System.Drawing.Bitmap agregar {
             get {
-                object obj = ResourceManager.GetObject("_8664789_circle_check_mark_accept_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664831_user_icon {
+        internal static System.Drawing.Bitmap ajustes_deslizadores {
             get {
-                object obj = ResourceManager.GetObject("_8664831_user_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("ajustes_deslizadores", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664843_pen_to_square_icon {
+        internal static System.Drawing.Bitmap buscar_alt {
             get {
-                object obj = ResourceManager.GetObject("_8664843_pen_to_square_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("buscar_alt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664843_pen_to_square_icon__1_ {
+        internal static System.Drawing.Bitmap buscar_alt__1_ {
             get {
-                object obj = ResourceManager.GetObject("_8664843_pen_to_square_icon__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("buscar_alt__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664915_rectangle_list_icon {
+        internal static System.Drawing.Bitmap busqueda {
             get {
-                object obj = ResourceManager.GetObject("_8664915_rectangle_list_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8664938_trash_can_delete_remove_icon {
+        internal static System.Drawing.Bitmap cruz {
             get {
-                object obj = ResourceManager.GetObject("_8664938_trash_can_delete_remove_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("cruz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap actualizar {
+        internal static System.Drawing.Bitmap estadisticas {
             get {
-                object obj = ResourceManager.GetObject("actualizar", resourceCulture);
+                object obj = ResourceManager.GetObject("estadisticas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap candadologin {
+        internal static System.Drawing.Bitmap hogar {
             get {
-                object obj = ResourceManager.GetObject("candadologin", resourceCulture);
+                object obj = ResourceManager.GetObject("hogar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eliminar {
+        internal static System.Drawing.Bitmap lapiz {
             get {
-                object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icono_buscar {
+        internal static System.Drawing.Bitmap lista {
             get {
-                object obj = ResourceManager.GetObject("icono_buscar", resourceCulture);
+                object obj = ResourceManager.GetObject("lista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imagenlogin {
+        internal static System.Drawing.Bitmap usuario {
             get {
-                object obj = ResourceManager.GetObject("imagenlogin", resourceCulture);
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loginblanco {
+        internal static System.Drawing.Bitmap usuario__1_ {
             get {
-                object obj = ResourceManager.GetObject("loginblanco", resourceCulture);
+                object obj = ResourceManager.GetObject("usuario__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,29 +183,9 @@ namespace PryFakiani_IEFI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loginimagen3 {
+        internal static System.Drawing.Bitmap usuario__2_ {
             get {
-                object obj = ResourceManager.GetObject("loginimagen3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap modificar {
-            get {
-                object obj = ResourceManager.GetObject("modificar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap siluetalogin {
-            get {
-                object obj = ResourceManager.GetObject("siluetalogin", resourceCulture);
+                object obj = ResourceManager.GetObject("usuario__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

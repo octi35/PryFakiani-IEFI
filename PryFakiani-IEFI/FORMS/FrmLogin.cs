@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PryFakiani_IEFI
 {
-    public partial class Form1 : Form
+    public partial class formInicio : Form
     {
 
         clsUsuariosDatos objUsuario;
-        public Form1()
+        public formInicio()
         {
             InitializeComponent();
         }

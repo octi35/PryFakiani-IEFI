@@ -49,15 +49,16 @@
             this.dataNacimiento = new System.Windows.Forms.DateTimePicker();
             this.dataUsuarios = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblNombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblNiveldeUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsuarios)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -91,7 +92,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(288, 22);
             this.txtNombre.TabIndex = 2;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtApellido
             // 
@@ -100,7 +100,6 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(304, 22);
             this.txtApellido.TabIndex = 3;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // txtCelular
             // 
@@ -109,7 +108,6 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(304, 22);
             this.txtCelular.TabIndex = 6;
-            this.txtCelular.TextChanged += new System.EventHandler(this.txtCelular_TextChanged);
             // 
             // txtContraseña
             // 
@@ -118,7 +116,6 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(244, 22);
             this.txtContraseña.TabIndex = 7;
-            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // txtLogin
             // 
@@ -127,7 +124,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(244, 22);
             this.txtLogin.TabIndex = 8;
-            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // label3
             // 
@@ -226,7 +222,6 @@
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(288, 24);
             this.cmbArea.TabIndex = 21;
-            this.cmbArea.SelectedIndexChanged += new System.EventHandler(this.cmbArea_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -247,25 +242,28 @@
             this.dataNacimiento.Name = "dataNacimiento";
             this.dataNacimiento.Size = new System.Drawing.Size(192, 22);
             this.dataNacimiento.TabIndex = 25;
-            this.dataNacimiento.ValueChanged += new System.EventHandler(this.dataNacimiento_ValueChanged);
             // 
             // dataUsuarios
             // 
+            this.dataUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataUsuarios.Location = new System.Drawing.Point(24, 428);
             this.dataUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dataUsuarios.MultiSelect = false;
             this.dataUsuarios.Name = "dataUsuarios";
+            this.dataUsuarios.ReadOnly = true;
             this.dataUsuarios.RowHeadersWidth = 51;
             this.dataUsuarios.RowTemplate.Height = 24;
+            this.dataUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataUsuarios.Size = new System.Drawing.Size(816, 220);
             this.dataUsuarios.TabIndex = 26;
-            this.dataUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsuarios_CellContentClick);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2});
+            this.lblNombreUsuario,
+            this.lblNiveldeUsuario});
             this.statusStrip1.Location = new System.Drawing.Point(0, 708);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -273,26 +271,74 @@
             this.statusStrip1.TabIndex = 27;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel2
+            // lblNombreUsuario
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(151, 20);
+            this.lblNombreUsuario.Text = "toolStripStatusLabel2";
             // 
-            // btnNuevo
+            // lblNiveldeUsuario
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
-            this.btnNuevo.Font = new System.Drawing.Font("Cooper Black", 9F);
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevo.Location = new System.Drawing.Point(24, 656);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(181, 49);
-            this.btnNuevo.TabIndex = 22;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.lblNiveldeUsuario.Name = "lblNiveldeUsuario";
+            this.lblNiveldeUsuario.Size = new System.Drawing.Size(151, 20);
+            this.lblNiveldeUsuario.Text = "toolStripStatusLabel1";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(211, 22);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(303, 22);
+            this.txtBusqueda.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 9F);
+            this.label2.Location = new System.Drawing.Point(32, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 17);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "BUSQUEDA";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtBusqueda);
+            this.panel1.Location = new System.Drawing.Point(2, 338);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(895, 64);
+            this.panel1.TabIndex = 32;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
+            this.btnBuscar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.Location = new System.Drawing.Point(658, 6);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(182, 49);
+            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
+            this.btnModificar.Font = new System.Drawing.Font("Cooper Black", 9F);
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.Location = new System.Drawing.Point(231, 656);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(182, 49);
+            this.btnModificar.TabIndex = 33;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -324,63 +370,20 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnBuscar
+            // btnNuevo
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
-            this.btnBuscar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(658, 6);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(182, 49);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(211, 22);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(303, 22);
-            this.txtBusqueda.TabIndex = 30;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 9F);
-            this.label2.Location = new System.Drawing.Point(32, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "BUSQUEDA";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtBusqueda);
-            this.panel1.Location = new System.Drawing.Point(2, 338);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(895, 64);
-            this.panel1.TabIndex = 32;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
-            this.btnModificar.Font = new System.Drawing.Font("Cooper Black", 9F);
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.Location = new System.Drawing.Point(231, 656);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(182, 49);
-            this.btnModificar.TabIndex = 33;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(185)))), ((int)(((byte)(227)))));
+            this.btnNuevo.Font = new System.Drawing.Font("Cooper Black", 9F);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.Location = new System.Drawing.Point(24, 656);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(181, 49);
+            this.btnNuevo.TabIndex = 22;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FrmUsuarios
             // 
@@ -412,6 +415,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUsuarios";
             this.Text = "REGISTRO USUARIOS";
@@ -450,7 +454,7 @@
         private System.Windows.Forms.DateTimePicker dataNacimiento;
         private System.Windows.Forms.DataGridView dataUsuarios;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel lblNombreUsuario;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
@@ -459,5 +463,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.ToolStripStatusLabel lblNiveldeUsuario;
     }
 }

@@ -52,7 +52,7 @@
             this.aDMINISTRACIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(761, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(761, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,14 +62,14 @@
             this.bUSCARToolStripMenuItem});
             this.tAREASToolStripMenuItem.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tAREASToolStripMenuItem.Name = "tAREASToolStripMenuItem";
-            this.tAREASToolStripMenuItem.Size = new System.Drawing.Size(105, 25);
+            this.tAREASToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
             this.tAREASToolStripMenuItem.Text = "TAREAS";
             // 
             // bUSCARToolStripMenuItem
             // 
             this.bUSCARToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
             // 
             // aDMINISTRACIONToolStripMenuItem
@@ -79,14 +79,14 @@
             this.aUDITORIAToolStripMenuItem1});
             this.aDMINISTRACIONToolStripMenuItem.Font = new System.Drawing.Font("Cooper Black", 10.8F);
             this.aDMINISTRACIONToolStripMenuItem.Name = "aDMINISTRACIONToolStripMenuItem";
-            this.aDMINISTRACIONToolStripMenuItem.Size = new System.Drawing.Size(201, 25);
+            this.aDMINISTRACIONToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.aDMINISTRACIONToolStripMenuItem.Text = "ADMINISTRACION";
             // 
             // aUDITORIAToolStripMenuItem
             // 
             this.aUDITORIAToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
             this.aUDITORIAToolStripMenuItem.Name = "aUDITORIAToolStripMenuItem";
-            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aUDITORIAToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.aUDITORIAToolStripMenuItem.Text = "USUARIOS";
             this.aUDITORIAToolStripMenuItem.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem_Click);
             // 
@@ -94,7 +94,7 @@
             // 
             this.aUDITORIAToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(126)))), ((int)(((byte)(225)))));
             this.aUDITORIAToolStripMenuItem1.Name = "aUDITORIAToolStripMenuItem1";
-            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.aUDITORIAToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.aUDITORIAToolStripMenuItem1.Text = "AUDITORIA";
             this.aUDITORIAToolStripMenuItem1.Click += new System.EventHandler(this.aUDITORIAToolStripMenuItem1_Click);
             // 
@@ -151,6 +151,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.Text = "MENU PRINCIPAL";
